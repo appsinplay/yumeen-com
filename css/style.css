@@ -48,8 +48,19 @@ body {
 
 .content {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   gap: 2rem;
+}
+
+/* Mobile-first: infobox (photo + summary) shows first, article below.
+   On wider screens, swap so the infobox sits on the right of the article. */
+@media (min-width: 768px) {
+  .infobox {
+    order: 2;
+  }
+  .article {
+    order: 1;
+  }
 }
 
 .article {
